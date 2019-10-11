@@ -25,7 +25,7 @@ SECRET_KEY = 'x&x+9f13mm0l21)o62a@2##nl5acmz+1ln2x7afq*hv#7p5f1-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['person-api-crud-sample.herokuapp.com']
+ALLOWED_HOSTS = ['person-api-crud-sample.herokuapp.com', '*']
 
 
 # Application definition
