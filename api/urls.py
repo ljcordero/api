@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from polls.models import Person
-from rest_framework import routers, serializers, viewsets
+from rest_framework import routers, serializers, viewsets, filters
 
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -26,6 +26,8 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
 class PersonViewSet(viewsets.ModelViewSet):
     queryset = Person.objects.all()
     serializer_class = PersonSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['first_name', 'last_name']
 
 router = routers.DefaultRouter()
 router.register(r'Person', PersonViewSet)
