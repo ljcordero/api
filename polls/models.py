@@ -6,3 +6,4 @@ class Person(models.Model):
     last_name = models.CharField(max_length=200)
     birth_date = models.DateField()
     zip_code = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=20, null=True)
