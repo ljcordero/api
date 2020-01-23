@@ -21,7 +21,7 @@ from rest_framework import routers, serializers, viewsets, filters
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Person
-        fields = ['id', 'first_name', 'last_name', 'birth_date', 'zip_code', 'phone_number']
+        fields = ['id', 'first_name', 'last_name', 'birth_date', 'phone_number']
 
 class PersonViewSet(viewsets.ModelViewSet):
     queryset = Person.objects.all()
